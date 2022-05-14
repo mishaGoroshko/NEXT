@@ -1,0 +1,46 @@
+div {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, blue, blue 100%), linear-gradient(135deg, green, green), linear-gradient(225deg, yellow, yellow) , linear-gradient(225deg, red, red);
+    background-size: 50% 50%;
+    background-position: 0% 0%, 0% 100%, 100% 0%, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.quarters {
+    width: 101px;
+    height: 101px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.quarters:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    background-size: 50% 100%, 100% 50%;
+    background-position: 100% 0%, 0% 100%;
+    background-repeat: no-repeat;
+
+}
+
+#red {
+    background-color: red;
+}
+#blue {
+    background-color: blue;
+}
+#green {
+    background-color: green;
+}
+#yellow {
+    background-color: yellow;
+}
+
+/*https://stackoverflow.com/questions/17630330/css-circle-with-four-colors-and-only-one-div*/
