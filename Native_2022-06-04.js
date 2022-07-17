@@ -111,27 +111,27 @@
 
 //-----------------------------------------
 
-// const pr = new Promise((resolve, reject) => {
-// })
-//
-//
-// function CustomPromise(cb) {
-//
-//     function resolve(value) {
-//         //this.status = fulfilled
-//         //this.result = value
-//
-//     }
-//
-//     function reject(error) {
-//         //this.status = rejected
-//         //this.result = error
-//     }
-//
-//     cb(resolve, reject)
-// }
-//
-// const cp111 = new CustomPromise((res, rej) => {})
+const pr = new Promise((resolve, reject) => {
+})
+
+
+function CustomPromise(cb) {
+
+    function resolve(value) {
+        //this.status = fulfilled
+        //this.result = value
+
+    }
+
+    function reject(error) {
+        //this.status = rejected
+        //this.result = error
+    }
+
+    cb(resolve, reject)
+}
+
+const cp111 = new CustomPromise((res, rej) => {})
 
 //---------------
 

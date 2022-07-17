@@ -88,33 +88,158 @@
 
 //--------------------
 
-console.log(false == undefined);
-console.log(false == null);
-console.log(null == 0);
-console.log(NaN == false)
-console.log(null === undefined);
+// console.log(false == undefined);
+// console.log(false == null);
+// console.log(null == 0);
+// console.log(NaN == false)
+// console.log(null === undefined);
+//
+// console.log( undefined > 0 ); // false
+// console.log( undefined < 0 ); // false
+// console.log( undefined == 0 ); // false
+// console.log( null > 0 );  // false
+//
+// console.log( null == 0 ); // false
+//
+// console.log('-----------------------------------------------------')
+// console.log('' == false);   // '' --> 0 <-- false
+// console.log(0 == false);
+// console.log(null == undefined);    //special rule
+// //  < > <= >=
+// console.log(null >= 0);   //  null --> 0     undefined --> NaN
+//
+// console.log('//Забавное следствие---------------------------------')
+// let a = 0;
+// console.log( Boolean(a) ); // false
+//
+// let b = "0";
+// console.log( Boolean(b) ); // true
+//
+// console.log(a == b); // true!
 
-console.log( undefined > 0 ); // false
-console.log( undefined < 0 ); // false
-console.log( undefined == 0 ); // false
-console.log( null > 0 );  // false
+//-----------------------------------------------------------
 
-console.log( null == 0 ); // false
+// let a = 1
+//
+// const myFunc = (b) => {
+//     const inside = () => {
+//         console.log(a + b)
+//     }
+//     return inside()
+// }
+// myFunc(4)
 
-console.log('-----------------------------------------------------')
-console.log('' == false);   // '' --> 0 <-- false
-console.log(0 == false);
-console.log(null == undefined);    //special rule
-//  < > <= >=
-console.log(null >= 0);   //  null --> 0     undefined --> NaN
+//----------proto-------------------------------------------------
 
-console.log('//Забавное следствие---------------------------------')
-let a = 0;
-console.log( Boolean(a) ); // false
+// const person = {
+//     age: 42
+// }
+//
+// Object.prototype.counter = function (num) {
+//     return console.log(this.age + num)
+//
+// }
+//
+// person.counter(11000)
 
-let b = "0";
-console.log( Boolean(b) ); // true
+//------------------
 
-console.log(a == b); // true!
+// const moto = {
+//     rise(n) {
+//         console.log(n)
+//     }
+// }
+//
+// const gilera = {}
+//
+//
+// gilera.__proto__ = moto
+// // Object.setPrototypeOf(gilera, moto)
+//
+// gilera.rise(42)
+
+//----------promise-------------------------------------------------
+
+// const pr = new Promise((resolve, reject) => {
+//     // resolve('fulfilled')
+//     // reject('rejected')
+//
+//     setTimeout(() => resolve(100500), 1000)
+// })
+//
+// pr.then((res) => console.log(res), (e) => console.warn(e))
+
+//----------this-------------------------------------------------
+
+// const auto ={
+//     power: 170,
+//     ride(){
+//         console.log(`${this.power}hp`)
+//     }
+// }
+//
+// const vw = {
+//     power: 100
+// }
+//
+// auto.ride.bind(vw)()
+//
+// class Moto1 {
+//     constructor(power) {
+//         this.power = power
+//     }
+//     ride(){
+//         console.log(`${this.power}hp`)
+//     }
+// }
+//
+//
+// function Moto2(){
+//     this.power = power
+// }
+//
+// const m1 = new Moto2(125)
+// m1.ride()
+
+
+// 'use strict'
+// const someFunc = () => {
+//     console.log(this)
+// }
+
+// function someFunc (){
+//     console.log(this)
+// }
+
+// someFunc()
+
+//-----------map-------------------------
+
+const customMap = (el, i, arr) => {
+
+    let newArr = []
+
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(el + 100)
+    }
+
+    return console.log(newArr)
+
+}
+// customMap([1,2,3,4,5])
+
+Array.prototype.customMap = function (cd) {
+    let newArr = []
+
+    for (let i = 0; i < this.length; i++) {
+        newArr.push(cd(this[i]))
+    }
+    return newArr
+
+}
+
+const exampleArray = [1,2,3,4,5]
+
+console.log(exampleArray.customMap(el => el.toString()));
 
 
