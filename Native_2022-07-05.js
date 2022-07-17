@@ -215,31 +215,31 @@
 
 //-----------map-------------------------
 
-const customMap = (el, i, arr) => {
-
-    let newArr = []
-
-    for (let i = 0; i < arr.length; i++) {
-        newArr.push(el + 100)
-    }
-
-    return console.log(newArr)
-
-}
-// customMap([1,2,3,4,5])
-
-Array.prototype.customMap = function (cd) {
-    let newArr = []
-
-    for (let i = 0; i < this.length; i++) {
-        newArr.push(cd(this[i]))
-    }
-    return newArr
-
-}
-
-const exampleArray = [1,2,3,4,5]
-
-console.log(exampleArray.customMap(el => el.toString()));
+// const customMap = (el, i, arr) => {
+//
+//     let newArr = []
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         newArr.push(el + 100)
+//     }
+//
+//     return console.log(newArr)
+//
+// }
+// // customMap([1,2,3,4,5])
+//
+// Array.prototype.customMap = function (cd) {
+//     let newArr = []
+//
+//     for (let i = 0; i < this.length; i++) {
+//         newArr.push(cd(this[i]))
+//     }
+//     return newArr
+//
+// }
+//
+// const exampleArray = [1,2,3,4,5]
+//
+// console.log(exampleArray.customMap(el => el.toString()));
 
 

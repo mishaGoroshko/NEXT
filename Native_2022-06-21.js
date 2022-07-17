@@ -38,6 +38,6 @@
 
 //////////////////////
 
-console.log([1,2,3] + true)
-console.log({} + {})
-console.log('2' * 3 + true)
+// console.log([1,2,3] + true)
+// console.log({} + {})
+// console.log('2' * 3 + true)
