@@ -238,8 +238,110 @@
 //
 // }
 //
-// const exampleArray = [1,2,3,4,5]
+// const exampleArray = [1, 2, 3, 4, 5]
 //
 // console.log(exampleArray.customMap(el => el.toString()));
+
+//------class constructor--------------------------------------
+
+// class BaseUser0 {
+//     static NAME_LENGTH = 25
+//
+//     constructor(name) {
+//         this.name = name
+//     }
+// }
+//
+// class User0 extends BaseUser0{}
+//
+// //------function constructor--------------------------------------
+//
+// function BaseUser(name) {
+//     this.name = name
+// }
+//
+// BaseUser.NAME_LENGTH = 25
+//
+// BaseUser.prototype.sayHi = function () {
+//     console.log('Hello')
+// }
+//
+// function User(){}
+// User.prototype.__proto__ = BaseUser.prototype
+//
+// console.log(User.NAME_LENGTH);          // undefined
+// console.log(BaseUser.NAME_LENGTH);      //  25
+//
+// User.__proto__ = BaseUser
+// console.log(User.NAME_LENGTH);          //  25
+
+//------------------map------------------------------------
+// function myMap(cb) {
+//     let res = []
+//     for (let i = 0; i < this.length; i++) {
+//         res.push(cb(this[i]))
+//     }
+//     return res
+// };
+//
+// Array.prototype.myMap = myMap
+//
+// console.log([1, 2, 3].myMap(el => el + 10000));
+
+//----------------------promisetion---------------------
+
+// const readFile = (path, cb) => {
+//     if (path) {
+//         cb(null, 'Hello')
+//     } else {
+//         cb('invalid path', null)
+//     }
+// }
+//
+// readFile('', (err, data) => {
+//         if (err) {
+//         } else {
+//         }
+//     }
+// )
+//
+// const readFilePr = (path) => {
+//     return new Promise((resolve, reject) => {
+//         readFile(path, (err, data) => {
+//             if (err) {
+//                 reject(err)
+//             } else {
+//                 resolve(data)
+//             }
+//         })
+//     })
+// }
+//
+// readFilePr.then(res => console.log(res))
+
+//-----------------------------------------
+function Test(name) {
+    this.name = name
+}
+
+function first() {
+    console.log(`name: ${this.name}`)
+}
+
+this.name = '111111111111'
+
+const second = () => {
+    // this.name = '22222222222222'
+    console.log(`name: ${this.name}`)
+}
+
+const user = {
+    name: 'Bob',
+    first: first,
+    second: second
+}
+
+user.first()
+user.second()
 
 
