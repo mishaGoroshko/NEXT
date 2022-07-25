@@ -254,7 +254,7 @@
 //
 // class User0 extends BaseUser0{}
 //
-// //------function constructor--------------------------------------
+// // //------function constructor--------------------------------------
 //
 // function BaseUser(name) {
 //     this.name = name
@@ -320,28 +320,72 @@
 // readFilePr.then(res => console.log(res))
 
 //-----------------------------------------
-function Test(name) {
-    this.name = name
-}
+// function Test(name) {
+//     this.name = name
+// }
 
-function first() {
-    console.log(`name: ${this.name}`)
-}
+// function first() {
+//     console.log(`name: ${this.name}`)
+// }
+//
+//
+// const second = () => {
+//     this.name = '22222222222222'
+//     console.log(`name: ${this.name}`)
+// }
+//
+// const user = {
+//     name: 'Bob',
+//     first: first,
+//     second: second
+// }
+//
+// user.first()
+// user.second()
 
-this.name = '111111111111'
+//----------------замыкание
+// const a = 1
+//
+// function someFunc(b = 100) {
+//     return a + b
+// }
+//
+// console.log(someFunc())
 
-const second = () => {
-    // this.name = '22222222222222'
-    console.log(`name: ${this.name}`)
-}
+//----------------proto
 
-const user = {
-    name: 'Bob',
-    first: first,
-    second: second
-}
+// class User {
+//     constructor(name) {
+//         this.name = name
+//     }
+// }
+//
+// class User2 {
+//     static AGE = 42
+//     constructor(age) {
+//         this.age = age
+//     }
+// }
+//
+// const user = new User('Bob')
+//
+// console.log(user.__proto__ === User.prototype);
+//
+// user.__proto__ = User2
+//
+// console.log(user.name);
+// console.log(user.AGE);
 
-user.first()
-user.second()
+//---------map
+
+// console.log([1, 2, 3].map((n, i) => (i % 2) ? n + 100 : n));
+// console.log([1,2,3].map(n => n.toString()))
+console.log([1, 2, 3].reduce((acc, n) => [...acc, n.toString()], []))
+console.log([1, 2, 3].reduce((acc, n) => {
+    acc.push(n.toString())
+    return acc
+}, []))
+
+console.log([1, 2, 3].filter(n => n === 2))
 
 
