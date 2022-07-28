@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<img class="image" src="assets/icons/cards.svg" alt="cards">
+
+<div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
+    deleniti dolorum esse incidunt molestiae nihil sed tenetur ullam! Animi debitis
+    eveniet exercitationem fugit ipsum natus tempora! Facilis maxime odio odit?
+</div>
+
+<span class="string">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
+    deleniti dolorum esse incidunt molestiae nihil sed tenetur ullam! Animi debitis
+    eveniet exercitationem fugit ipsum natus tempora! Facilis maxime odio odit?
+</span>
+
+<script>
+    const api = {
+        getUsers() {
+            const pr = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('users from server')
+                }, 2000)
+            })
+            return pr
+        }
+    }
+
+    function* getMoney() {
+       const users = yield api.getUsers()
+        yield 300
+        yield 200
+        yield 100
+    }
+
+    // SAGA MIDDLEWARE
+    let generator = getMoney()
+    let result = generator.next()
+    if (result.value.constructor.name === 'Promise') {
+        result.value.then((res) => {
+            console.log(res)
+            generator.next(res)
+        })
+    }
+    console.log(generator.next().value)
+    console.log(generator.next().value)
+    console.log(generator.next().value)
+    console.log('---------------------')
+    console.log(generator.next().value)
+    console.log(generator.next().done)
+    console.log('---------------------')
+    console.log(generator.next())
+
+
+</script>
+
+</body>
+</html>
