@@ -45,6 +45,26 @@ console.log('----------------------------__proto__------------------------------
 
 console.log([].__proto__.__proto__ === null)
 
-console.log((() => { }).__proto__.__proto__ === Object.prototype)
+console.log((() => {
+}).__proto__.__proto__ === Object.prototype)
 
-console.log(Object.__proto__ === (() => { }).__proto__)
+console.log(Object.__proto__ === (() => {
+}).__proto__)
+
+const res = {
+    showName: function () {
+        console.log(this.name)
+    },
+    'car': {name: 'car'},
+    'user': {name: 'user'},
+    'road': {name: 'road'},
+}
+
+//----------------------------
+console.log('----------------------------for--------------------------------------')
+
+for (var i = 0; i < 10; i++) {
+    setTimeout(() => {
+        console.log(i)
+    }, 10)
+}
