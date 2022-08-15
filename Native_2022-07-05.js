@@ -97,16 +97,16 @@
 // console.log( undefined > 0 ); // false
 // console.log( undefined < 0 ); // false
 // console.log( undefined == 0 ); // false
+
 // console.log( null > 0 );  // false
-//
 // console.log( null == 0 ); // false
 //
 // console.log('-----------------------------------------------------')
 // console.log('' == false);   // '' --> 0 <-- false
 // console.log(0 == false);
 // console.log(null == undefined);    //special rule
-// //  < > <= >=
-// console.log(null >= 0);   //  null --> 0     undefined --> NaN
+//  < > <= >=
+// console.log(null <= 0);   //  null --> 0     undefined --> NaN
 //
 // console.log('//Забавное следствие---------------------------------')
 // let a = 0;
@@ -380,12 +380,12 @@
 
 // console.log([1, 2, 3].map((n, i) => (i % 2) ? n + 100 : n));
 // console.log([1,2,3].map(n => n.toString()))
-console.log([1, 2, 3].reduce((acc, n) => [...acc, n.toString()], []))
-console.log([1, 2, 3].reduce((acc, n) => {
-    acc.push(n.toString())
-    return acc
-}, []))
-
-console.log([1, 2, 3].filter(n => n === 2))
+// console.log([1, 2, 3].reduce((acc, n) => [...acc, n.toString()], []))
+// console.log([1, 2, 3].reduce((acc, n) => {
+//     acc.push(n.toString())
+//     return acc
+// }, []))
+//
+// console.log([1, 2, 3].filter(n => n === 2))
 
 
