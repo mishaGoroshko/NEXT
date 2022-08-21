@@ -62,7 +62,8 @@ console.log('-----------------------------tree2---------------------------------
 const tree2 = {
     id: 1, children: [
         {id: 21, children: null},
-        {id: 22, children: [
+        {
+            id: 22, children: [
                 {id: 31, children: null},
                 {id: 32, children: null},
                 {id: 33, children: [{id: 41, children: null}]}
@@ -72,6 +73,7 @@ const tree2 = {
 }
 
 let res = []
+
 function getAllItems(tree) {
     res.push(tree.id)
 
@@ -145,16 +147,19 @@ console.log('-----------------------------binary search----------');
 
 const arr = [1, 2, 3, 4, 7, 8, 10, 15, 20, 21, 25, 29, 30]
 
-function bs(n) {
+function bs(arr, n) {
+
+    if (!arr.length) return false
     const half = Math.floor(arr.length / 2)
 
-    if (arr[half] === n) return n
-    if (arr[half] > n) return n
-
-
+    if (n === arr[half]) return true
+    if (n > arr[half]) return bs(arr.slice(half + 1), n)
+    if (n < arr[half]) return bs(arr.slice(0, half - 1), n)
+    return true
 }
 
-console.log(bs(25))
+console.log(bs(arr, 20))
+console.log(bs(arr, 31))
 
 console.log('');
 console.log('-----------------------------return array\'s length ----------');
@@ -170,7 +175,7 @@ function lenR(x) {
 }
 
 console.log(lenR([]))
-console.log(lenR([1,2,3]))
+console.log(lenR([1, 2, 3]))
 
 console.log('');
 console.log('-----------------------------repeat "чик-чирик" ----------');
@@ -179,7 +184,7 @@ console.log('-----------------------------repeat "чик-чирик" ----------'
 function chirp(n) {
     if (n === 1) return 'chirp'
 
-    return 'chirp-' + chirp(n-1)
+    return 'chirp-' + chirp(n - 1)
 }
 
 console.log(chirp(2))
