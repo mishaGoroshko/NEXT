@@ -31,6 +31,7 @@ const treeValueSum = (tree) => {
 
     tree.children.forEach(el => sum += treeValueSum(el))
 
+
     return sum
 }
 
@@ -61,29 +62,21 @@ console.log('-----------------------------tree2---------------------------------
 const tree2 = {
     id: 1, children: [
         {id: 21, children: null},
-        {
-            id: 22, children: [
+        {id: 22, children: [
                 {id: 31, children: null},
                 {id: 32, children: null},
-                {
-                    id: 33, children: [
-                        {id: 41, children: null},
-                    ]
-                },
+                {id: 33, children: [{id: 41, children: null}]}
             ]
-        },
+        }
     ]
 }
 
 let res = []
-
 function getAllItems(tree) {
-
-
     res.push(tree.id)
 
     if (Array.isArray(tree.children)) {
-        tree.children.forEach(el => getAllItems(tree.children))
+        tree.children.forEach(el => getAllItems(el))
     }
     return res
 }
@@ -162,6 +155,35 @@ function bs(n) {
 }
 
 console.log(bs(25))
+
+console.log('');
+console.log('-----------------------------return array\'s length ----------');
+
+function lenR(x) {
+
+    let [head, ...tail] = x
+
+    if (!head) return 0
+
+    return 1 + lenR(tail)
+
+}
+
+console.log(lenR([]))
+console.log(lenR([1,2,3]))
+
+console.log('');
+console.log('-----------------------------repeat "чик-чирик" ----------');
+
+
+function chirp(n) {
+    if (n === 1) return 'chirp'
+
+    return 'chirp-' + chirp(n-1)
+}
+
+console.log(chirp(2))
+console.log(chirp(4))
 
 
 
