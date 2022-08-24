@@ -47,4 +47,9 @@
 // }
 // a()
 
+[111, 2, 3, 4].reduce((x, y) => console.log(x, y));
 
+console.log(Symbol(1) === Symbol(1))   // false
+console.log(Symbol(1))           // Symbol(1)
+console.log(Symbol(false))       // Symbol(false)
+console.log(Symbol(() => {}))    //Symbol(() => {}))
