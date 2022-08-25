@@ -53,3 +53,9 @@ console.log(Symbol(1) === Symbol(1))   // false
 console.log(Symbol(1))           // Symbol(1)
 console.log(Symbol(false))       // Symbol(false)
 console.log(Symbol(() => {}))    //Symbol(() => {}))
+
+
+console.log('-----------------------------padStart----------------------');
+
+console.log('abcdef'.padStart(7))
+console.log('abcdef'.padStart(6))
