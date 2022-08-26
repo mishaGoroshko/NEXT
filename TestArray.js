@@ -28,7 +28,6 @@
 //                 newArr = [...newArr, arr[i + 3]]
 //             }
 //         }
-
 // let newArr = []
 // console.log(arr.sort((a, b) => a - b));
 //
@@ -46,8 +45,6 @@
 //         }
 //     }
 // }
-
-
 //     return newArr.join(', ')
 //
 // }
@@ -88,35 +85,7 @@ const arr = [9, 2, 6, 5, 3, 8, 1, 10, 12, 15, 16, 17, 18, 19];
 // console.log(SortArray([9, 2, 6, 5, 3, 8, 1, 10, 12, 15,16,17,18,19]));
 
 
-// const getRes = (arr) => {
-//     const sortedArr = arr.sort((a,b) => a-b)
-//     let consecutiveArr = []
-//     let res = ''
-//
-//     sortedArr.forEach((e, i) =>{e + 1 === sortedArr[i+1] && consecutiveArr.push(e, sortedArr[i+1])})
-//     console.log(consecutiveArr)
-//
-//     const duplicates = consecutiveArr.filter((item, index) => consecutiveArr.indexOf(item) !== index)
-//     console.log(duplicates)
-//
-//     sortedArr.forEach((el, index) => {
-//         if (duplicates.includes(el) && duplicates.includes(sortedArr[index+1])) return
-//         else if (duplicates.includes(sortedArr[index+1]))  res+=`${el}`
-//         else  if (duplicates.includes(el)) res+='-'
-//         else res+=`${el}, `
-//     })
-//
-//     return res.trim().slice(0, -1)
-// }
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 const getRes = (arr) => {
     const sortArr = arr.sort((a, b) => a - b)
     let longArr = []

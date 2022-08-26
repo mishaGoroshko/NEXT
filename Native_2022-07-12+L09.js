@@ -52,10 +52,29 @@
 console.log(Symbol(1) === Symbol(1))   // false
 console.log(Symbol(1))           // Symbol(1)
 console.log(Symbol(false))       // Symbol(false)
-console.log(Symbol(() => {}))    //Symbol(() => {}))
+console.log(Symbol(() => {
+}))    //Symbol(() => {}))
 
 
 console.log('-----------------------------padStart----------------------');
 
 console.log('abcdef'.padStart(7))
 console.log('abcdef'.padStart(6))
+
+let config = {
+    alert: setInterval(function () {
+        console.log('Alert!')
+    }, 1000)
+}
+// clearInterval(config.alert)
+// config = null
+setTimeout(() => clearInterval(config.alert), 5000)
+
+//--------------------------------------------------------------------------
+
+const add = x => y => z => {
+    console.log(x, y, z);
+    return x + y + z;
+};
+
+console.log(add(4)(5)(6));

@@ -132,6 +132,7 @@ function fibonacci(n) {
     if (n === 1) return [0, 1]
     else {
         let pair = fibonacci(n - 1)
+        console.log(pair)
         pair.push(pair[pair.length - 1] + pair[pair.length - 2])
         return pair
 
