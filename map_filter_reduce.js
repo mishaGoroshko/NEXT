@@ -145,13 +145,13 @@
 // const res = [1, 2, 3].reduce((acc, el) => acc + el, 0)
 //
 // console.log(res)
-//
+
 // function customReduce(cb, initState) {
 //
 //     let acc = initState || 0
 //
 //     for (let i = 0; i < this.length; i++) {
-//        cb(acc += this[i])
+//         acc = cb(acc, this[i])
 //     }
 //
 //     return acc
@@ -163,6 +163,23 @@
 
 
 //----------
+
+function Counter() {
+    let count = 0
+
+    this.up = function () {
+        return count = count + 1
+    }
+    this.down = function () {
+        return count = count - 1
+    }
+}
+
+const counter = new Counter()
+
+console.log(counter.up())
+console.log(counter.up())
+console.log(counter.down())
 
 // function BaseUser(name){
 //     this.name = name
@@ -204,4 +221,26 @@
 //     return acc
 // }, []));
 
-console.log([1, 2, 3, 4].reduce((acc, el) => [...acc, el.toString()], []));
+// console.log([1, 2, 3, 4].reduce((acc, el) => [...acc, el.toString()], []));
+
+//---------------------proto---------------------
+
+function User(name) {
+    this.name = name
+}
+
+const alex = new User('Alex')
+
+User.prototype = {}
+
+const hanna = new alex.constructor('Hanna')
+
+const max = new hanna.constructor('Max')
+
+
+console.log(alex.name)
+console.log(hanna.name)
+console.log(max.name)
+
+console.log(Array.prototype.__proto__ === Object.prototype)
+
