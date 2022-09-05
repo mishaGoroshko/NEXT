@@ -76,12 +76,13 @@
 
     text-align: center;
     line-height: 50px;
-    
+
     background: cornflowerblue;
     transition: all .5s ease;
     transform: translate(-50%, 0);
     position: relative;
     left: 50%;
+    user-select: none;
 }
 
 .transform:hover {
@@ -89,5 +90,42 @@
 }
 
 .transform:active {
-    transform: scale(-1, 1);
+    transform: scale(-1, -1);
+}
+.transform2 {
+    height: 30px;
+    width: 60px;
+    background-color: cornsilk;
+    text-align: center;
+    line-height: 30px;
+    transition: all .5s linear;
+}
+
+.transform2:hover {
+    transform: skew(15deg, 0deg);
+}
+
+.input {
+    display: none;
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+}
+
+.label {
+    display: inline-block;
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 30px;
+    width: min-content;
+    height: 30px;
+    cursor: pointer;
+    background-color: crimson;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.input:checked + label {
+    background-color: chocolate;
+    color: white;
 }

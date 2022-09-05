@@ -1,6 +1,6 @@
 // window.addEventListener('resize', debounce((event) => {}, 500))
 
-const f = throttlePlusLastArgument(console.log, 1000)
+const f = debounce(console.log, 600)
 
 f(1)
 f(2)
@@ -12,17 +12,11 @@ function debounce(cb, delay) {
 
     let timer
     return function (...args) {
-        // you may not to provide arguments into function
-        // return function () {
         clearTimeout(timer)
-
-        // console.log(args)
 
         timer = setTimeout(() => {
             cb.apply(this, args)
-            // cb.apply(this, ...arguments)
         }, delay)
-
     }
 }
 
