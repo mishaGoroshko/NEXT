@@ -108,6 +108,19 @@
 //  < > <= >=
 // console.log(null <= 0);   //  null --> 0     undefined --> NaN
 //
+// console.log('-----------------------------------------------------')
+// console.log(false == '')  // true
+// console.log(false == [])  // true
+// console.log(false == {})  // false
+
+// console.log('' == 0)   // true
+// console.log('' == [])  // true
+// console.log('' == {})  // false
+
+// console.log(0 == [])    // true
+// console.log(0 == {})    // false
+// console.log(0 == null)  // false
+
 // console.log('//Забавное следствие---------------------------------')
 // let a = 0;
 // console.log( Boolean(a) ); // false
@@ -215,19 +228,6 @@
 
 //-----------map-------------------------
 
-// const customMap = (el, i, arr) => {
-//
-//     let newArr = []
-//
-//     for (let i = 0; i < arr.length; i++) {
-//         newArr.push(el + 100)
-//     }
-//
-//     return console.log(newArr)
-//
-// }
-// // customMap([1,2,3,4,5])
-//
 // Array.prototype.customMap = function (cd) {
 //     let newArr = []
 //
@@ -235,14 +235,13 @@
 //         newArr.push(cd(this[i]))
 //     }
 //     return newArr
-//
 // }
 //
 // const exampleArray = [1, 2, 3, 4, 5]
 //
 // console.log(exampleArray.customMap(el => el.toString()));
 
-//------class constructor--------------------------------------
+//-------------------------class constructor--------------------------------------
 
 // class BaseUser0 {
 //     static NAME_LENGTH = 25
@@ -254,7 +253,7 @@
 //
 // class User0 extends BaseUser0{}
 //
-// // //------function constructor--------------------------------------
+//------------------------function constructor--------------------------------------
 //
 // function BaseUser(name) {
 //     this.name = name

@@ -161,25 +161,40 @@
 //
 // console.log([1, 2, 3].customReduce((acc, el) => acc + el, 4));
 
+//----------------------------------Promise.all
+
+function promiseAll(promises) {
+    const res = []
+
+    return new Promise((resolve, reject) => {
+        for (let i = 0; i < promises.activeElement; i++) {
+            promises[i].then(response => {
+                res.push(response)
+
+                if (promises.length === res.length) resolve(res)
+            })
+        }
+    })
+}
 
 //----------
 
-function Counter() {
-    let count = 0
-
-    this.up = function () {
-        return count = count + 1
-    }
-    this.down = function () {
-        return count = count - 1
-    }
-}
-
-const counter = new Counter()
-
-console.log(counter.up())
-console.log(counter.up())
-console.log(counter.down())
+// function Counter() {
+//     let count = 0
+//
+//     this.up = function () {
+//         return count = count + 1
+//     }
+//     this.down = function () {
+//         return count = count - 1
+//     }
+// }
+//
+// const counter = new Counter()
+//
+// console.log(counter.up())
+// console.log(counter.up())
+// console.log(counter.down())
 
 // function BaseUser(name){
 //     this.name = name

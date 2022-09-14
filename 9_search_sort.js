@@ -45,7 +45,7 @@ function bubbleSort(arr) {
     return arr
 }
 
-console.log(bubbleSort([4, 1, 3, 10, 5, 7, 0, 6]))
+console.log(bubbleSort([4, 1, 3, 8, 5, 7, 2, 6]))
 
 //---------------------quick sort------O(n * log(n))---unstable----------------------
 
@@ -61,7 +61,7 @@ function quickSort(arr) {
     }
 }
 
-console.log(quickSort([4, 1, 3, 10, 5, 7, 0, 6]))
+console.log(quickSort([4, 1, 3, 8, 5, 7, 2, 6]))
 
 
 //---------------------merge sort------O(n * log(n))---Stable-----------------------
@@ -92,6 +92,26 @@ function mergeSort(arr) {
     return merging(mergeSort(left), mergeSort(right))
 }
 
-console.log(mergeSort([4, 1, 3, 10, 5, 7, 0, 6]))
+console.log(mergeSort([4, 1, 3, 8, 5, 7, 2, 6]))
+
+
+//---------------------insertion sort------O(?)--------------------------
+
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let j = i - 1
+        const temp = arr[i]
+
+        while (j >= 0 && arr[j] > temp) {
+            arr[j + 1] = arr[j]
+            j--
+        }
+        arr[j + 1] = temp
+    }
+    return arr
+}
+
+console.log(insertionSort([4, 1, 3, 8, 5, 7, 2, 6]))
+
 
 

@@ -22,6 +22,16 @@ function isBalanced(string) {
         }
     }
     return !queue.length
+
+// for case with only ((((((((())))))))))))
+
+    // let n = 0;
+    // for (let i = 0; i < string.length; i++) {
+    //     if (string[i] === '(') n++;
+    //     if (string[i] === ')') n--;
+    //     if (n < 0) return false;
+    // }
+    // return n === 0;
 }
 
 console.log(isBalanced('(x + y) - (4)')) // -> true
