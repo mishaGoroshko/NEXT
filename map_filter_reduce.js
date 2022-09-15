@@ -163,19 +163,19 @@
 
 //----------------------------------Promise.all
 
-function promiseAll(promises) {
-    const res = []
-
-    return new Promise((resolve, reject) => {
-        for (let i = 0; i < promises.activeElement; i++) {
-            promises[i].then(response => {
-                res.push(response)
-
-                if (promises.length === res.length) resolve(res)
-            })
-        }
-    })
-}
+// function promiseAll(promises) {
+//     const res = []
+//
+//     return new Promise((resolve, reject) => {
+//         for (let i = 0; i < promises.activeElement; i++) {
+//             promises[i].then(response => {
+//                 res.push(response)
+//
+//                 if (promises.length === res.length) resolve(res)
+//             })
+//         }
+//     })
+// }
 
 //----------
 
