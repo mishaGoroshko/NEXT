@@ -2,26 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="transitions.css">
+    <title>Training</title>
+    <link rel="stylesheet" href="training.css">
 </head>
 <body>
 <div class="container">
-    <button class="but">start</button>
-
-    <div class="circle-block">
-        <div class="circle"></div>
+    <div class="square-block">
+        <div class="square"></div>
     </div>
 
-    <div class="transformBlock">
-        <div class="transform">qwerty</div>
-        <div class="transform2">HELLO</div>
+    <div class="input-block">
+        <input id="input" type="checkbox">
+        <label for="input">checkbox</label>
     </div>
 
-    <div>
-        <input id="check" type="checkbox" class="input"/>
-        <label for="check" class="label">check</label>
+
+    <div class="position-bock">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
     </div>
+
+    <div class="index-block">
+        <div class="index1"></div>
+        <div class="index2" data-description='z-index = 0'></div>
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <div class="input-file">
+        <input type="file" id="file">
+        <label for="file">change file</label>
+    </div>
+
+    <div class="disabled-block">
+        <input type="text">
+        <input type="text" disabled>
+    </div>
+
+    <div class="perspective">
+        <div class="perspective_item1">
+            <span>text</span>
+        </div>
+        <div class="perspective_item2">
+        </div>
+    </div>
+
+    <form action="/action_page.php" method="get">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
 </div>
 </body>
 </html>
