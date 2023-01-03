@@ -74,7 +74,11 @@
 
 .sub-items {
     display: grid;
-    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-template:
+            [start] "a b c" 100px [row2]/ 1fr 4fr 1fr;
+            [row2] "d o f" 100px [row3] / 1fr 4fr 1fr;
+            [row3] "e o g" 100px  [row4]/ 1fr 4fr 1fr;
+            [row4] "k l m" 100px [row-end] / 1fr 4fr 1fr;
     gap: 5px;
 }
 
@@ -85,42 +89,64 @@
 }
 
 .sud-item_1 {
-    background-color: greenyellow;
+    grid-area: a;
+    /*background-color: greenyellow;*/
 
     /*grid-column-start: 2;*/
     /*grid-column-end: 4;*/
-    grid-column: 2 / 4;
+    /*grid-column: 2 / 4;*/
 
     /*grid-row-start: 1;*/
     /*grid-row-end: 3;*/
-    grid-row: 1 / 3;
+    /*grid-row: 1 / 3;*/
 }
 
 .sud-item_2 {
+    grid-area: b;
+
 }
 
 .sud-item_3 {
-    background-color: yellow;
+    grid-area: c;
+    /*background-color: yellow;*/
 
-    grid-row-start: span 2;
+    /*grid-row-start: span 2;*/
 }
 
 .sud-item_4 {
+    grid-area: d;
+    background-color: yellow;
+
     /*order: 5;*/ /*order we must indicate to everyone item */
 }
 
 .sud-item_5 {
+    grid-area: e;
+    background-color: yellow;
     /*order: 4;*/
 }
 
 .sud-item_6 {
+    grid-area: f;
 }
 
 .sud-item_7 {
-    background-color: lightcoral;
+    grid-area: g;
 
-    grid-column-start: span 2;
+    /*grid-column-start: span 2;*/
 }
 
 .sud-item_8 {
+}
+
+.sud-item_9 {
+}
+
+.sud-item_10 {
+}
+
+.sud-item_11 {
+    grid-area: o;
+    background-color: lightcoral;
+
 }
